@@ -18,8 +18,8 @@ int main(void)
 	scanf("%d%d",&a,&b);
 	c=a*b;
 	d=max(a,b);
-	printf("×î´ó¹«Ô¼ÊıÎª%d\n",d);
-    printf("×îĞ¡¹«±¶ÊıÎª%d\n",c/d);
+	printf("æœ€å¤§å…¬çº¦æ•°ä¸º%d\n",d);
+    printf("æœ€å°å…¬å€æ•°ä¸º%d\n",c/d);
 	return 0;
    
 }
