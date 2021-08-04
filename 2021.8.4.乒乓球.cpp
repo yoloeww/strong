@@ -18,7 +18,7 @@ int main(void)
 					continue;
 				    c=k;
 					if(a!='X'&&c!='X'&&c!='Z')
-						printf("A和%c比，B和%c比，C和%c比。\n",a,b,c);
+						printf("A潞脥%c卤脠拢卢B潞脥%c卤脠拢卢C潞脥%c卤脠隆拢\n",a,b,c);
 			}
 		}
 	}
