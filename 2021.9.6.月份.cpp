@@ -8,7 +8,7 @@ int main(void)
     scanf("%d%d%d",&year,&month,&day);
 	days=sums(month,day);
 	if(leap(year)&&month>=3)
-		days=day+1;
+		days=days+1;
 	printf("%d/%d/%d is %d of the year:\n",year,month,day,days);
 	return 0;
 }
