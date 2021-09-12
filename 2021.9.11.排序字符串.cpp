@@ -25,9 +25,9 @@ void sort(char s[N][6])
 		{
 		    if(strcmp(s[j],s[j+1])>0)
 			{
-			     strcpy(t,s[j]);
-				 strcpy(s[j],s[j+1]);
-				 strcpy(s[j],t);			
+				 strcpy ( t,s[j]);
+			         strcpy(s[j],s[j+1])
+				 strcpy(s[j+1],t);			
 			}
 		}
 }
