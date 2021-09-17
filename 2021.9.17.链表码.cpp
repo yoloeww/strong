@@ -3,9 +3,9 @@
 # include<string.h>
 typedef struct Node 
 {
-     char num[20];
-	 float score;
-	 struct Node *pnext;
+     char name[20];
+	 int  score;
+	 struct Node *next;
 }N,*P;
 P create (void)
 {
@@ -15,10 +15,10 @@ P create (void)
 		 printf("Ê§°Ü\n");
 	     exit(-1);
 	 }
-	 pheard->pnext=NULL;
+	 pheard->next=NULL;
 	 return pheard;
 }
-void input (P pheard,char name[],float n)
+void input (P pheard,char num[],int  n)
 {
   P last=(P)malloc(sizeof(N));
   if(last==NULL)
@@ -26,23 +26,46 @@ void input (P pheard,char name[],float n)
 	 printf("Ê§°Ü\n");
 	     exit(-1);
   }
-  strcpy(last->num,name);
+  strcpy(last->name,num);
   last->score=n;
-  last->pnext=NULL;
-  while(pheard->pnext!=NULL)
-	  pheard=pheard->pnext;
-  pheard->pnext=last;
+  last->next=NULL;
+  while(pheard->next!=NULL)
+	  pheard=pheard->next;
+  pheard->next=last;
+}
+void sort (P pheard)
+{
+
+	   P tall=pheard;
+	   P math=tall->next;
+	 
+while(math->next)
+{
+	P a=tall;
+	P b=math;
+	while(b->next)
+	{
+	 if(b->score > b->next->score)
+	 {
+	       a->next = b->next;
+                b->next = b->next->next;
+                a->next->next = b;
+	 }
+           a = a->next;
+            b = a->next;
+	}
+        pheard = pheard->next;
+        math = pheard->next;
+    }
 }
 void show(P pheard)
 {
-     while(pheard->pnext!=NULL)
-	 {
-		 while(pheard->pnext!=NULL)
+  
+		 while(pheard->next!=NULL)
 		 {
-			 pheard=pheard->pnext;
-			 printf("%5s %5.2f\n",pheard->num,pheard->score);
+			 pheard=pheard->next;
+			 printf("%5s %5.2d \n",pheard->name,pheard->score);
 		 }
-	 }
 
 }
 int main(void)
@@ -52,9 +75,11 @@ int main(void)
 	 P pheard=create();
 	 printf("input message:\n");
 	 for(i=0;i<5;i++)
-		 scanf("%s%f",a[i].num,&a[i].score);
-	for(i=0;i<5;i++)
-		 input(pheard,a[i].num,a[i].score);
+	 {
+		 scanf("%s%d",a[i].name,&a[i].score);
+		 input(pheard,a[i].name,a[i].score);
+	 }
+	sort(pheard);
 	show(pheard);
 	return 0;
 }
