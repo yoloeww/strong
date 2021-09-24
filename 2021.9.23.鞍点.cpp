@@ -4,5 +4,4 @@
 bool f(int a[][N],int i,int j)
 int main(void)
 {
-
-}
+ for()}
