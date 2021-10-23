@@ -19,7 +19,7 @@ int main(void)
 	   p2++;
 	}
 	*p1='\0';
-	printf("%s",p1);
+	printf("%s\n",str1);
 	return 0;
 
 }
